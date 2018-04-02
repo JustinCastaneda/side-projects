@@ -58,6 +58,9 @@ const Styledbutton = styled(Button)`
 
 // States
 
+
+// Component
+
 class Home extends Component {
   render() {
     return (

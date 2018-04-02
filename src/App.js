@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { BrowserRouter, Route, Switch, Fade } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
 // Components Area
@@ -18,7 +18,6 @@ class App extends PureComponent {
         </Switch>
       </BrowserRouter>
     );
-
   }
 }
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Tab } from 'semantic-ui-react';
 
 import styled from 'styled-components';
@@ -8,21 +8,7 @@ import Wallicon from '../../resources/images/wall_icon.png'
 import Fileicon from '../../resources/images/file_icon.png'
 import Tmicon from '../../resources/images/trojan_icon.png'
 
-// const styles = {
-//   root: {
-//     width: '50%'
-//   },
-//   tab: {
-//     maxHeight: '60px',
-//     display: 'flex',
-//     margin: '0 auto 15px auto'
-//   },
-//   text: {
-//     color: '#ffffff',
-//     textAlign: 'center',
-//     fontFamily: 'Industry Inc'
-//   }
-// }
+// Styled Components
 
 const Styledhalf = styled.div`
   float: left;
