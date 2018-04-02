@@ -1,10 +1,18 @@
 * {
   padding: 0;
   margin: 0;
-  text-decoration: none; }
+  text-decoration: none;
+  font-family: 'Avenir', 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased; /* Working on dark backgrounds */
+  box-sizing: border-box;
+}
 html {
   font-size: 1vw;
 }
+h1, h2 {
+  font-family: "Industry Inc";
+}
+
 .wrapper {
   background: #000;
   background-image: url("./images/security_bg_image.jpg");
@@ -14,7 +22,24 @@ html {
   min-height: 768px;
   height: 100vh;
   overflow: hidden;
+  position: relative;
 }
+
+.wrapper.fixed {
+  overflow: hidden;
+}
+
+/* .wrapper:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: #000;
+  opacity: .3;
+  z-index: -1;
+} */
 
 .header {
   height: 7rem; }
@@ -26,6 +51,17 @@ html {
   display: flex;
   padding: 0 !important; }
 
+/* button.ui.button {
+  background-color: #2185D0;
+  color: #fff;
+} */
+/* button.ui.button:hover,
+button.ui.button:active,
+button.ui.button:visited,
+button.ui.button:focus {
+  background-color: #0092ff;
+  color: #fff;
+} */
 h2 {
   font-family: "Industry Inc";
   font-size: 1.25rem;
@@ -34,33 +70,16 @@ h2 {
   font-weight: normal;
   text-shadow: 0 0 10px #2185D0;
   text-align: left;
-  -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 1rem 1rem 0.8rem 1rem;
   border-bottom: 2px solid #2185D0; }
 
-.column.header-content {
-  padding-left: 30px !important; }
 
-h1 {
-  color: #FFFFFF;
-  font-family: "Industry Inc", sans-serif;
-  font-size: 3.2rem;
-  line-height: 1;
-  font-weight: normal;
-  text-shadow: 0 0 10px #2185D0;
-  text-align: left;
-  -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: .5rem; }
-
-.sub {
+/* .sub {
   font-family: 'Avenir', 'Lato', sans-serif;
-}
+} */
 
 .main-menu {
   display: flex;
@@ -128,22 +147,22 @@ div.ui.text.menu a.item {
   border-color: #2185D0;
   border-right: 2px solid #7d7d7d;
   border-bottom: 2px solid #2185D0;
-  width: 33.4333333%;
+  width: 33.3333333%;
   background: #333;
   color: #fff;
   text-align: center;
   justify-content: center;
   flex-direction: column;
   display: flex;
-  padding: 10px 0;
+  padding: 7px 0;
   font-size: .9rem;
   line-height: 1.2;
  }
   div.ui.text.menu a.item:first-child {
     border-radius: 8px 0 0 0; }
   div.ui.text.menu a.item:last-child {
-    border-radius: 0 8px 0 0;
-    border-right: 0; }
+    border-radius: 0 9px 0 0;
+    border-right: 0 !important; }
   div.ui.text.menu a.item.active {
     color: #fff;
     background: transparent;

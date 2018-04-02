@@ -1,21 +1,22 @@
 import React, { PureComponent } from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { store } from './redux/store';
-import { Router, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Fade } from 'react-router-dom';
+
 
 // Components Area
-import { Home, Dashboard } from './modules';
+import { Home, Dashboard, Login, Signup } from './modules';
 
 class App extends PureComponent {
   render() {
     return (
-      <Router history={this.props.history}>
-        <div>
+      <BrowserRouter history={this.props.history}>
+        <Switch>
           <Route exact={true} path="/" component={Home} />
+          <Route exact={true} path="/login" component={Login} />
+          <Route exact={true} path="/signup" component={Signup} />
           <Route exact={true} path="/dashboard" component={Dashboard} />
-        </div>
-      </Router>
+          <Route component={Home}/>
+        </Switch>
+      </BrowserRouter>
     );
 
   }

@@ -1,44 +1,81 @@
-import React, { Component } from 'react';
-import { Grid, Button} from 'semantic-ui-react';
+import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
+import { Grid, Button } from 'semantic-ui-react'
+import Headerlogo from '../common/Headerlogo'
+import styled from 'styled-components';
 
-import HeaderLogo from '../common/Headerlogo';
+// Styled Components
 
-const styles = {
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    height: '100vh',
-    justifyContent: 'center'
-  },
-  title: {
-    fontSize: '7rem',
-    margin: '0'
-  },
-  sub: {
-    color: '#eee',
-    fontSize: '2rem'
+const Styledgrid = styled(Grid)`
+  width: 22rem;
+  &&>.row {
+    justify-content: space-around;
   }
-}
+`;
+
+const Centercolumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+`;
+
+const Styledsubhead = styled.h3`
+  color: #eee;
+  font-size: 2rem;
+  padding: .8rem 0 2rem 0;
+  margin: 0 0 .5rem;
+  font-weight: 400;
+`;
+
+
+const Stylednavlink = styled(NavLink)`
+  display: flex;
+  width: 10rem;
+  &:hover, &:focus, &:active, &:visited {
+    outline-width: 0;
+  }
+`;
+
+const Styledbutton = styled(Button)`
+  /* &&& for specificity override */
+  &&& {
+    font-size: 1rem;
+    display: flex;
+    flex: 1 1 10rem;
+    padding: 1rem 0;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    background: #2185D0;
+    &:hover, &:focus {
+      background: #0092ff;
+    }
+  }
+`;
+
+// States
 
 class Home extends Component {
   render() {
     return (
-      <div className="wrapper">
+      <div className="wrapper fixed">
         <Grid padded>
-          <Grid.Row className="header" style={styles.head}>
-            <HeaderLogo />
+          <Grid.Row className="header">
+            <Headerlogo fontSize="3.2rem" paddingLeft>DEF3NSE</Headerlogo>
             <Grid.Column width={6}>
-              <div style={styles.root}>
-                <h1 style={styles.title}>DEF3NSE</h1>
-                <p style={styles.sub} className="sub">A Cyber Security Game</p>
-                <Grid>
+              <Centercolumn>
+                <Headerlogo fontSize="7rem">DEF3NSE</Headerlogo>
+                <Styledsubhead>A Cyber Security Game</Styledsubhead>
+                <Styledgrid>
                   <Grid.Row>
-                    <Button>Login</Button>
-                    <Button>Register</Button>
+                    <Stylednavlink to="/login"><Styledbutton type="submit">Login</Styledbutton></Stylednavlink>
+                    <Stylednavlink to="/signup"><Styledbutton type="submit">Register</Styledbutton></Stylednavlink>
                   </Grid.Row>
-                </Grid>
-              </div>
+                </Styledgrid>
+              </Centercolumn>
             </Grid.Column>
           </Grid.Row>
         </Grid>

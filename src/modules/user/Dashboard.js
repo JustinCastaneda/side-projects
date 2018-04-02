@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Grid } from 'semantic-ui-react';
 
-import HeaderLogo from '../common/Headerlogo';
+import Headerlogo from '../common/Headerlogo';
 import Clock from './Clock';
 import Dashlinks from './Dashlinks';
 import Ioctabs from './Ioctabs';
 
 const styles = {
   gridRow: {
-    paddingBottom: '0'
+    padding: '0'
   }
 }
 
@@ -18,7 +18,7 @@ class Dashboard extends Component {
       <div className="wrapper ui">
         <Grid padded>
           <Grid.Row className="header">
-            <HeaderLogo />
+            <Headerlogo fontSize="3.2rem" paddingLeft>DEF3NSE</Headerlogo>
             <Clock />
             <Dashlinks />
           </Grid.Row>
