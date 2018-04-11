@@ -17,8 +17,8 @@ const Styledaechone = styled.h1`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: .5rem;
-  padding-left: ${props => props.paddingLeft ? '20px' : '0' };
+  padding-top: .8rem;
+  padding-left: ${props => props.paddingLeft ? '28px' : '0' };
   padding-right: ${props => props.paddingRight ? '20px' : '0' };
 `;
 

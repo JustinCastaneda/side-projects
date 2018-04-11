@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { Grid, Button, Form } from 'semantic-ui-react'
 import styled from 'styled-components'
 import Headerlogo from '../common/Headerlogo'
+import Styledbutton from '../styledcomponents/Styledbutton'
 
 
 // Styled Components
@@ -81,25 +82,6 @@ const Stylednavlink = styled(NavLink)`
   }
 `;
 
-const Styledbutton = styled(Button)`
-  /* &&& for specificity override */
-  &&& {
-    font-size: 1rem;
-    display: flex;
-    flex: 1 1 auto;
-    padding: 1rem;
-    margin: 0;
-    text-align: center;
-    justify-content: center;
-    color: #fff;
-    background: ${props => props.cancelform ? '#c10000' : '#2185D0'};
-    &:hover, &:focus {
-      background: ${props => props.cancelform ? '#e40000' : '#0092ff'};
-    }
-  }
-`;
-
-
 // Component States
 // Comming soon...
 
@@ -122,14 +104,14 @@ class Login extends Component {
                   <Grid.Row>
                     <Styledform size="large" onSubmit={this.props.login}>
                       <Form.Field>
-                        <Form.Input required placeholder="Enter your username..."></Form.Input>
+                        <Form.Input type="email" name="email" required placeholder="Enter an email address..."></Form.Input>
                       </Form.Field>
                       <Form.Field>
                         <Form.Input type="password" required placeholder="Enter your password..."></Form.Input>
                       </Form.Field>
                       <Button.Group>
-                        <Stylednavlink to="/"><Styledbutton cancelform="true">Cancel</Styledbutton></Stylednavlink>
-                        <Stylednavlink to="/dashboard" lastbutton="true"><Styledbutton>Submit</Styledbutton></Stylednavlink>
+                        <Stylednavlink to="/"><Styledbutton cancelButton="true" buttonText="Cancel" /></Stylednavlink>
+                        <Stylednavlink to="/dashboard" lastbutton="true"><Styledbutton buttonText="Submit"/></Stylednavlink>
                       </Button.Group>
                     </Styledform>
                   </Grid.Row>

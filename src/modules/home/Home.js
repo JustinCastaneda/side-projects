@@ -66,7 +66,7 @@ class Home extends Component {
     return (
       <div className="wrapper fixed">
         <Grid padded>
-          <Grid.Row className="header">
+          <Grid.Row className="mainHeader">
             <Headerlogo fontSize="3.2rem" paddingLeft>DEF3NSE</Headerlogo>
             <Grid.Column width={6}>
               <Centercolumn>

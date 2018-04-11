@@ -41,11 +41,11 @@ h1, h2 {
   z-index: -1;
 } */
 
-.header {
-  height: 7rem; }
+.mainHeader {
+  height: 6rem; }
 
 .game {
-  height: 90%; }
+  height: 91%; }
 
 .column {
   display: flex;
@@ -73,7 +73,7 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1rem 1rem 0.8rem 1rem;
+  padding: 1rem 1rem 0.8rem 1.2rem;
   border-bottom: 2px solid #2185D0; }
 
 
@@ -103,11 +103,11 @@ h2 {
   padding: 10px; }
 
 .top-left-nav {
-  height: 70%;
+  height: 68%;
   padding: 0 15px 15px 30px; }
 
 .bottom-left-nav {
-  height: 30%;
+  height: 32%;
   padding: 10px 15px 30px 30px; }
 
 .center-content {
@@ -127,7 +127,7 @@ h2 {
   background: rgba(0, 0, 0, 0.9);
   border: 2px solid #2185D0;
   box-shadow: 0 0 16px 6px rgba(33, 133, 208, 0.45);
-  border-radius: 10px;
+  border-radius: 8px;
   height: 100%; }
 
 #bottom-left .top.tabular.menu {
@@ -137,12 +137,13 @@ h2 {
   border: none;
   border-radius: 8px;
   background: transparent;
-  margin: 0; }
-
-div.ui.text.menu {
   margin: 0;
-}
-div.ui.text.menu a.item {
+  padding: 0; }
+
+/* div.ui.text.menu {
+  margin: 0;
+} */
+/* div.ui.text.menu a.item {
   border-radius: 0;
   border-color: #2185D0;
   border-right: 2px solid #7d7d7d;
@@ -154,7 +155,7 @@ div.ui.text.menu a.item {
   justify-content: center;
   flex-direction: column;
   display: flex;
-  padding: 7px 0;
+  padding: .4rem 0;
   font-size: .9rem;
   line-height: 1.2;
  }
@@ -162,14 +163,14 @@ div.ui.text.menu a.item {
     border-radius: 8px 0 0 0; }
   div.ui.text.menu a.item:last-child {
     border-radius: 0 9px 0 0;
-    border-right: 0 !important; }
-  div.ui.text.menu a.item.active {
+    border-right: 0 !important; } */
+  /* div.ui.text.menu a.item.active {
     color: #fff;
     background: transparent;
     border-bottom-width: 0;
-    border-right: 2px solid #2185D0; }
+    border-right: 2px solid #2185D0; } */
 
-.clock .clock-regions {
+/* .clock .clock-regions {
   height: 100%;
   color: #fff;
   text-align: center;
@@ -181,20 +182,20 @@ div.ui.text.menu a.item {
   box-shadow: 0 0 16px 6px rgba(33, 133, 208, 0.45);
   font-size: .9rem;
   line-height: 1.2;
-  font-family: "Industry Inc", sans-serif; }
-.clock .vone {
+  font-family: "Industry Inc", sans-serif; } */
+/* .clock .vone {
   height: 85%;
   border-radius: 0 0 0 10px;
-  border-right-width: 0; }
-  .clock .vone svg {
-    margin-right: .5rem; }
-  .clock .vone span {
-    display: block; }
-.clock .two {
+  border-right-width: 0; } */
+  /* .clock .vone svg {
+    margin-right: .5rem; } */
+  /* .clock .vone span {
+    display: block; } */
+/* .clock .two {
   border-radius: 0 0 10px 10px; }
 .clock .three {
   height: 85%;
   border-radius: 0 0 10px 0;
-  border-left-width: 0; }
+  border-left-width: 0; } */
 
 /*# sourceMappingURL=final.css.map */

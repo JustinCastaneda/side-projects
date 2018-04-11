@@ -4,6 +4,7 @@ import { Grid } from 'semantic-ui-react';
 import Headerlogo from '../common/Headerlogo';
 import Clock from './Clock';
 import Dashlinks from './Dashlinks';
+import Navigationtabs from './Navigationtabs'
 import Ioctabs from './Ioctabs';
 
 const styles = {
@@ -17,7 +18,7 @@ class Dashboard extends Component {
     return (
       <div className="wrapper ui">
         <Grid padded>
-          <Grid.Row className="header">
+          <Grid.Row className="mainHeader">
             <Headerlogo fontSize="3.2rem" paddingLeft>DEF3NSE</Headerlogo>
             <Clock />
             <Dashlinks />
@@ -29,6 +30,7 @@ class Dashboard extends Component {
               <div className="top-left-nav region">
                 <div className="inner-col-wrap">
                   <h2>Navigation</h2>
+                  <Navigationtabs />
                 </div>
               </div>
               <div id="bottom-left" className="bottom-left-nav region">

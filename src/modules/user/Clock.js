@@ -1,45 +1,171 @@
-import React, { Component } from 'react';
-import { Grid } from 'semantic-ui-react';
+import React, { Component } from 'react'
+import { Grid } from 'semantic-ui-react'
+import { NavLink } from 'react-router-dom'
+import styled from 'styled-components'
 
-const styles = {
-  root: {
+import Gradcap from '../../resources/svg/Gradcap'
+import Shieldicon from '../../resources/svg/Shieldicon'
 
-  },
-  column: {
-    height: '5rem',
-    borderTop: 'none'
-  },
-  centerColumn: {
-    height: '6rem',
-    borderTop: 'none'
+
+const Styledgrid = styled(Grid)`
+  &&& {
+    .clock-regions {
+      height: 100%;
+      color: #fff;
+      text-align: center;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.76);
+      border: 2px solid #2185D0;
+      box-shadow: 0 0 16px 6px rgba(33, 133, 208, 0.45);
+      font-size: .9rem;
+      line-height: 1.2;
+      font-family: "Industry Inc", sans-serif;
+      border-top: 0;
+      height: 4.75rem;
+    }
+    .clockLeft {
+      border-radius: 0 0 0 10px;
+      border-right-width: 0;
+    }
+    .clockCenter {
+      border-radius: 0 0 10px 10px;
+      height: 5.5rem;
+    }
+    .clockRight {
+      border-radius: 0 0 10px 0;
+      border-left-width: 0;
+    }
   }
+`;
 
-}
+const Styledkxlink = styled(NavLink)`
+  display: flex;
+  justify-content: center;
+  margin-top: .3rem;
+  svg {
+    display: flex;
+    margin: .5rem .5rem 0 0;
+  }
+  &:hover {
+    svg {
+      fill: #fff;
+    }
+    div {
+      text-shadow: 0 0 12px #2185D0;
+    }
+  }
+`;
+
+const Styledkx = styled.div`
+  text-align: left;
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 500;
+  font-family: 'Industry Inc', sans-serif;
+  svg {
+    margin-right: .5rem;
+  }
+  span {
+    font-family: inherit;
+    display: block;
+  }
+`;
+
+const Styledclock = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  line-height: 1;
+  padding: .3rem 0;
+  h4 {
+    margin: 0;
+    padding: 0;
+    color: #2185D0;
+    font-weight: 900;
+  }
+  div {
+    font-size: 1.8rem;
+    font-family: 'Avenir', sans-serif;
+    font-weight: 900;
+  }
+  aside {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: .8rem;
+    color: #eee;
+  }
+`;
+
+const Styledscore = styled.div`
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: .5rem 0;
+  }
+  svg {
+    display: flex;
+    margin-right: 1rem;
+  }
+  div {
+    font-size: 2rem;
+    font-family: 'Avenir', sans-serif;
+    font-weight: 900;
+  }
+  aside {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8rem;
+  }
+`;
+
+
+// Regions
+
+const Knowledgelink = () => (
+  <Styledkxlink to="/">
+    <Gradcap iconFill="#2185D0"/>
+    <Styledkx>Knowledge<span>Exchange</span></Styledkx>
+  </Styledkxlink>
+)
+
+const Clockregion = () => (
+  <Styledclock>
+    <h4>Click Start to Begin</h4>
+    <div>00:00:00</div>
+    <aside>Time Remaining</aside>
+  </Styledclock>
+)
+
+const Scoreregion = () => (
+  <Styledscore>
+    <section>
+      <Shieldicon iconFill="#2185D0"/>
+      <div>0</div>
+    </section>
+    <aside>Cyber Currency</aside>
+  </Styledscore>
+)
+
 
 class Clock extends Component {
   render() {
     return (
       <Grid.Column width={6}>
-        <Grid className="clock">
-          <Grid.Column width={5} className="clock-regions vone" style={styles.column}>
-            <Grid padded>
-              <Grid.Column width={5}>
-                <svg width="21" height="13" xmlns="http://www.w3.org/2000/svg"><path d="M20.093 2.733L11.49.14a3.578 3.578 0 0 0-1.978 0L.907 2.733c-1.213.356-1.206 2.055 0 2.409l.912.275c-.11.35-.153.72-.169 1.132a.918.918 0 0 0-.007 1.598l-.33 4.17a.263.263 0 0 0 .262.283h1.05c.153 0 .274-.13.262-.283l-.33-4.17A.918.918 0 0 0 2.57 6.56c.014-.338.049-.621.133-.877l1.928.581c-.197 1.314-.43 2.878-.43 2.913 0 1.932 4.352 2.373 6.3 2.373 1.948 0 6.3-.441 6.3-2.373 0-.035-.233-1.599-.43-2.913l3.723-1.122c1.21-.355 1.208-2.055 0-2.409zm-4.346 6.465c-.26.777-2.622 1.302-5.247 1.302s-4.987-.525-5.247-1.302l.394-2.627L9.51 7.736a3.578 3.578 0 0 0 1.978 0l3.864-1.165.394 2.627zm4.047-5.064l-8.598 2.594a2.53 2.53 0 0 1-1.392 0L1.212 4.136l-.006-.002a.202.202 0 0 1 0-.393l8.598-2.594a2.53 2.53 0 0 1 1.392 0l8.592 2.592.006.002a.202.202 0 0 1 0 .393z" fill="#2185D0" fillRule="nonzero"/></svg>
-              </Grid.Column>
-              <Grid.Column width={11}>
-                <div className="text">
-                  Knowledge<span>Exchange</span>
-                </div>
-              </Grid.Column>
-            </Grid>
+        <Styledgrid className="clock">
+          <Grid.Column width={5} className="clock-regions clockLeft">
+            <Knowledgelink />
           </Grid.Column>
-          <Grid.Column width={6} className="two clock-regions" style={styles.centerColumn}>
-            <div>two</div>
+          <Grid.Column width={6} className="clock-regions clockCenter">
+            <Clockregion />
           </Grid.Column>
-          <Grid.Column width={5} className="three clock-regions" style={styles.column}>
-            <div>three</div>
+          <Grid.Column width={5} className="clock-regions clockRight">
+            <Scoreregion />
           </Grid.Column>
-        </Grid>
+        </Styledgrid>
       </Grid.Column>
     );
   }
