@@ -32,11 +32,11 @@ const Styledtab = styled(Tab)`
       font-size: .9rem;
       line-height: 1.2;
       &:first-child {
-        border-radius: 8px 0 0 0;
+        border-radius: 6px 0 0 0;
       }
       &:last-child {
-        border-radius: 0 9px 0 0;
-        border-right: 0;
+        border-radius: 0 6px 0 0;
+        border-right: 0 !important;
       }
       &.active {
         color: #fff;

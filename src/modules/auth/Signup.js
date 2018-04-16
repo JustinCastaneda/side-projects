@@ -118,8 +118,8 @@ class Login extends Component {
                         <Form.Input required placeholder="Enter last name..."></Form.Input>
                       </Form.Field>
                       <Button.Group>
-                        <Stylednavlink to="/"><Styledbutton cancelButton="true" buttonText="Cancel" /></Stylednavlink>
-                        <Stylednavlink to="/dashboard" lastbutton="true"><Styledbutton buttonText="Submit" /></Stylednavlink>
+                        <Stylednavlink to="/"><Styledbutton cancelButton="true">Cancel</Styledbutton></Stylednavlink>
+                        <Stylednavlink to="/crossroad" lastbutton="true"><Styledbutton>Submit</Styledbutton></Stylednavlink>
                       </Button.Group>
                     </Styledform>
                   </Grid.Row>

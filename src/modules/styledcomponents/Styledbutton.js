@@ -23,7 +23,7 @@ const Mainbutton = styled(Button)`
 class Styledbutton extends Component {
   render() {
     return (
-      <Mainbutton longbutton={this.props.longButton} cancelbutton={this.props.cancelButton}>{this.props.buttonText}</Mainbutton>
+      <Mainbutton longbutton={this.props.longButton} cancelbutton={this.props.cancelButton}>{this.props.children}</Mainbutton>
     );
   }
 }
