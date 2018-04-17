@@ -40,7 +40,7 @@ const Styledgrid = styled(Grid)`
   }
 `;
 
-const Styledkxlink = styled(NavLink)`
+const Styledkxlink = styled.a`
   display: flex;
   justify-content: center;
   margin-top: .3rem;
@@ -96,6 +96,7 @@ const Styledclock = styled.div`
     text-transform: uppercase;
     font-size: .8rem;
     color: #eee;
+    line-height: 1.4;
   }
 `;
 
@@ -126,7 +127,7 @@ const Styledscore = styled.div`
 // Regions
 
 const Knowledgelink = () => (
-  <Styledkxlink to="/">
+  <Styledkxlink href="https://workshop.def3nse.net/">
     <Gradcap iconFill="#2185D0"/>
     <Styledkx>Knowledge<span>Exchange</span></Styledkx>
   </Styledkxlink>

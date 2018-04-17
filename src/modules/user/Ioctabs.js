@@ -22,8 +22,8 @@ const Styledtab = styled(Tab)`
       border-right: 2px solid #7d7d7d;
       border-bottom: 2px solid #2185D0;
       width: 33.3333333%;
-      background: #333;
-      color: #fff;
+      background: #252525;
+      color: #eee;
       text-align: center;
       justify-content: center;
       flex-direction: column;
@@ -54,7 +54,7 @@ const Styledhalf = styled.div`
   border-right: 1px solid #333;
   border-width: ${props => props.noborder ? '0' : '1px'};
   cursor: pointer;
-  margin: 1.8rem 0;
+  margin: 2.3rem 0;
   &:hover {
     img {
       filter: brightness(1.3);

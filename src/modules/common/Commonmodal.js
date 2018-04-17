@@ -41,7 +41,7 @@ class Commonmodal extends Component {
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
-          <Styledbutton longButton="true" buttonText="Submit" />
+          <Styledbutton longButton="true">Submit</Styledbutton>
         </Modal.Actions>
       </Styledmodal>
     );
