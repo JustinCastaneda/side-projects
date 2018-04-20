@@ -31,18 +31,28 @@ const Styledtab = styled(Tab)`
       }
     }
   }
+  &&& .ui.bottom.tab {
+    position: absolute;
+    top: 6.5rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    color: #fff;
+    border: none;
+  }
 `;
 
 // TAB CONTENT - Panes
 const panes = [
   { menuItem: <Menu.Item key="ioc">Tactics Market</Menu.Item>, render: () =>
     <Tab.Pane>
-      <div>This is stuff and junk!</div>
+      <div>Blammo, tab 1 content</div>
     </Tab.Pane>
   },
   { menuItem: <Menu.Item key="ds">Artifact Info</Menu.Item>, render: () =>
     <Tab.Pane>
-      <div>This is other stuff and junk!</div>
+      <div>Boosh, tab 2 content</div>
     </Tab.Pane>
   }
 ]
