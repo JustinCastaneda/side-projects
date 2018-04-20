@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Grid } from 'semantic-ui-react'
-import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 import Gradcap from '../../resources/svg/Gradcap'
@@ -127,7 +126,7 @@ const Styledscore = styled.div`
 // Regions
 
 const Knowledgelink = () => (
-  <Styledkxlink href="https://workshop.def3nse.net/">
+  <Styledkxlink target="_blank" rel="noopener noreferrer" href="https://workshop.def3nse.net/">
     <Gradcap iconFill="#2185D0"/>
     <Styledkx>Knowledge<span>Exchange</span></Styledkx>
   </Styledkxlink>

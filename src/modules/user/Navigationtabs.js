@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import Navaccordion from './Navaccordion'
 
+
 // Styled components
 
 const Styledtab = styled(Tab)`
@@ -66,7 +67,6 @@ const Styledtab = styled(Tab)`
   }
 `;
 
-
 // TAB CONTENT - Panes
 const panes = [
   { menuItem: <Menu.Item key="scenarios">Scenarios</Menu.Item>, render: () =>
@@ -76,27 +76,27 @@ const panes = [
   },
   { menuItem: <Menu.Item key="ttps">TTPs</Menu.Item>, render: () =>
     <Tab.Pane>
-      <div>Two</div>
+      <div>Boosh</div>
     </Tab.Pane>
   },
   { menuItem: <Menu.Item key="detect">Detect</Menu.Item>, render: () =>
     <Tab.Pane>
-      <div>Three</div>
+      <div>Blammo</div>
     </Tab.Pane>
   },
   { menuItem: <Menu.Item key="protect">Protect</Menu.Item>, render: () =>
     <Tab.Pane>
-
+      <Navaccordion />
     </Tab.Pane>
   },
   { menuItem: <Menu.Item key="respond">Respond</Menu.Item>, render: () =>
     <Tab.Pane>
-
+      <Navaccordion />
     </Tab.Pane>
   },
   { menuItem: <Menu.Item key="playbooks">Playbooks</Menu.Item>, render: () =>
     <Tab.Pane>
-
+      <Navaccordion />
     </Tab.Pane>
   }
 ]

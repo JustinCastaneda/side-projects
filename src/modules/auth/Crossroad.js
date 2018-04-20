@@ -8,13 +8,6 @@ import Styledbutton from '../styledcomponents/Styledbutton';
 
 // Styled Components
 
-const Styledgrid = styled(Grid)`
-  width: 100%;
-  &&>.row {
-    justify-content: center;
-  }
-`;
-
 const Centercolumn = styled.div`
   display: flex;
   flex-direction: row;
@@ -76,7 +69,7 @@ class Crossroad extends Component {
             <Grid.Column width={6}>
               <Centercolumn>
 
-                <a target="_blank" href="https://workshop.def3nse.net/">
+                <a target="_blank" rel="noopener noreferrer" href="https://workshop.def3nse.net/">
                   <Styledcard>
                     <Card.Content>
                       <Card.Header>Workshop</Card.Header>

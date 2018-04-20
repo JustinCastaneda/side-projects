@@ -6,6 +6,7 @@ import Clock from './Clock';
 import Dashlinks from './Dashlinks';
 import Navigationtabs from './Navigationtabs'
 import Ioctabs from './Ioctabs';
+import Centernav from './Centernav'
 
 const styles = {
   gridRow: {
@@ -43,6 +44,7 @@ class Dashboard extends Component {
               <div className="center-content region">
                 <div className="inner-col-wrap">
                   <h2>Intelligence</h2>
+                  <Centernav />
                 </div>
               </div>
             </Grid.Column>

@@ -9,6 +9,11 @@
 html {
   font-size: 1vw;
 }
+@media (min-width: 1920px) {
+  html {
+    font-size: .9vw;
+  }
+}
 h1, h2 {
   font-family: "Industry Inc";
 }
