@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-import { Grid } from 'semantic-ui-react';
+import React, { Component } from 'react'
+import { Grid } from 'semantic-ui-react'
 
-import Headerlogo from '../common/Headerlogo';
-import Clock from './Clock';
-import Dashlinks from './Dashlinks';
+import Headerlogo from '../common/Headerlogo'
+import Clock from './Clock'
+import Dashlinks from './Dashlinks'
 import Navigationtabs from './Navigationtabs'
-import Ioctabs from './Ioctabs';
+import Ioctabs from './Ioctabs'
 import Centernav from './Centernav'
+import Leaderboard from './Leaderboard'
 
 const styles = {
   gridRow: {
@@ -52,6 +53,7 @@ class Dashboard extends Component {
               <div className="top-right-nav region">
                 <div className="inner-col-wrap">
                   <h2>Leaderboard</h2>
+                  <Leaderboard />
                 </div>
               </div>
               <div className="bottom-right-nav region">

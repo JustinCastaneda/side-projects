@@ -8,6 +8,7 @@ const Mainbutton = styled(Button)`
     font-size: 1rem;
     display: flex;
     flex: 1 1 auto;
+    border-radius: 5px;
     padding: ${props => props.longbutton ? '1rem 2.5rem' : '1rem'};
     margin: 0;
     text-align: center;

@@ -45,12 +45,12 @@ const Styledtab = styled(Tab)`
 
 // TAB CONTENT - Panes
 const panes = [
-  { menuItem: <Menu.Item key="ioc">Tactics Market</Menu.Item>, render: () =>
+  { menuItem: <Menu.Item key="ioc">Artifact Information</Menu.Item>, render: () =>
     <Tab.Pane>
       <div>Blammo, tab 1 content</div>
     </Tab.Pane>
   },
-  { menuItem: <Menu.Item key="ds">Artifact Info</Menu.Item>, render: () =>
+  { menuItem: <Menu.Item key="ds">Attack Tactics Market</Menu.Item>, render: () =>
     <Tab.Pane>
       <div>Boosh, tab 2 content</div>
     </Tab.Pane>
