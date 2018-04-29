@@ -44,7 +44,7 @@ const Styledtab = styled(Tab)`
     background: transparent;
     color: #fff;
     border: none;
-    padding: 1.5rem 2rem;
+    padding: 2rem 3rem;
     overflow: auto;
   }
 `;

@@ -18,6 +18,8 @@ const Styledwrap = styled.div`
       bottom: 0;
       width: 100%;
       height: 4rem;
+      background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.9));
+      border-top: 1px solid #333;
     }
   }
 `;
@@ -40,11 +42,7 @@ const Styledlistwrap = styled.ul`
   padding: 0 0 .25rem 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  border-bottom: 1px solid #333;
-  max-height: 13rem;
-  @media (min-width: 1600px) {
-    max-height: 16rem;
-  }
+  max-height: 14rem;
 `;
 
 const Styledleader = styled.li`
@@ -161,7 +159,7 @@ class Leaderboard extends Component {
       <Styledwrap>
         <Leaderheading />
         <LeadersList leadersData={mockData} />
-        <Commonmodal modalSize="small" triggerButton={ Leadermodalbutton() } modalHeader="Indicators of Compromise" modalContent={ Tabcontent() }/>
+        <Commonmodal modalSize="small" triggerButton={ Leadermodalbutton() } modalHeader="Leaderboard" modalContent={ Tabcontent() }/>
       </Styledwrap>
     );
   }

@@ -8,6 +8,7 @@ import Navigationtabs from './Navigationtabs'
 import Ioctabs from './Ioctabs'
 import Centernav from './Centernav'
 import Leaderboard from './Leaderboard'
+import Gamelog from './Gamelog'
 
 const styles = {
   gridRow: {
@@ -59,6 +60,7 @@ class Dashboard extends Component {
               <div className="bottom-right-nav region">
                 <div className="inner-col-wrap">
                   <h2>Game Log</h2>
+                  <Gamelog />
                 </div>
               </div>
             </Grid.Column>
