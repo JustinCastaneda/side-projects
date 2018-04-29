@@ -2,6 +2,10 @@ import React from 'react'
 import { Tab, Menu } from 'semantic-ui-react'
 import styled from 'styled-components'
 
+import Artifactinfo from './Artifactinfo'
+import Scenarioquestion from './Scenarioquestion'
+import Tradingtable from './Tradingtable'
+
 const Styledtab = styled(Tab)`
   /* &&& for specificity override */
   &&& div.ui.text.menu {
@@ -40,19 +44,40 @@ const Styledtab = styled(Tab)`
     background: transparent;
     color: #fff;
     border: none;
+    padding: 1.5rem 2rem;
+    overflow: auto;
   }
 `;
+
+// Mock Data
+const MockData = [
+  {
+    title: 'Artifact 1',
+    text: 'Lorem ipsum dolor sit amet, mel erant verear te, an est eirmod percipit. Altera audiam labores mel ei, te enim blandit molestiae nam. Has no noster salutatus, ad nec essent suscipiantur, omnis legere constituam ei quo. Per id falli laudem possit, homero explicari eam et. Usu wisi quando ei. Hinc graece ea eum. Debet consequuntur qui te, duo at paulo admodum efficiendi. Vide urbanitas sit ei, delicata intellegebat vis eu. Ornatus sententiae no sea, dolorem fabellas ea sea.',
+    config: '/test',
+    info: '/test2'
+  }
+];
+
+const MockQuestion = [
+  {
+    title: 'Estimate Your Effort',
+    question: 'How long will it take you to solve this artifact?'
+  }
+];
+
 
 // TAB CONTENT - Panes
 const panes = [
   { menuItem: <Menu.Item key="ioc">Artifact Information</Menu.Item>, render: () =>
     <Tab.Pane>
-      <div>Blammo, tab 1 content</div>
+      <Artifactinfo title={MockData[0].title} text={MockData[0].text} config={MockData[0].config} info={MockData[0].info} />
+      <Scenarioquestion title={MockQuestion[0].title} question={MockQuestion[0].question} />
     </Tab.Pane>
   },
   { menuItem: <Menu.Item key="ds">Attack Tactics Market</Menu.Item>, render: () =>
     <Tab.Pane>
-      <div>Boosh, tab 2 content</div>
+      <Tradingtable />
     </Tab.Pane>
   }
 ]

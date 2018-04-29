@@ -76,12 +76,12 @@ const panes = [
   },
   { menuItem: <Menu.Item key="ttps">TTPs</Menu.Item>, render: () =>
     <Tab.Pane>
-      <div>Boosh</div>
+      <div>Tab 2 Content</div>
     </Tab.Pane>
   },
   { menuItem: <Menu.Item key="detect">Detect</Menu.Item>, render: () =>
     <Tab.Pane>
-      <div>Blammo</div>
+      <div>Tab 3 Content</div>
     </Tab.Pane>
   },
   { menuItem: <Menu.Item key="protect">Protect</Menu.Item>, render: () =>

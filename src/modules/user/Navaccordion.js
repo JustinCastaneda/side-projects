@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Accordion, Icon, Menu } from 'semantic-ui-react'
+import { Accordion, Icon } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 import Lighticon from '../../resources/images/light_icon.png'

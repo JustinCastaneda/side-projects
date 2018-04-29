@@ -13,6 +13,12 @@ const Styledwrap = styled.div`
       font-size: .8rem;
       padding: .75rem 1.25rem;
     }
+    div:last-child {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 4rem;
+    }
   }
 `;
 
@@ -34,8 +40,8 @@ const Styledlistwrap = styled.ul`
   padding: 0 0 .25rem 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  max-height: 14rem;
   border-bottom: 1px solid #333;
+  max-height: 13rem;
   @media (min-width: 1600px) {
     max-height: 16rem;
   }
@@ -52,6 +58,9 @@ const Styledleader = styled.li`
   }
   section {
     width: 60%;
+  }
+  @media (min-width: 1920px) {
+    padding-bottom: .5rem;
   }
 `;
 
