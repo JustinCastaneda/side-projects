@@ -52,12 +52,6 @@ const Styledimage = styled.img`
   position: relative;
 `;
 
-const Styledlist = styled.ul`
-  list-style: none;
-  li {
-    color: #fff;
-  }
-`;
 
 // Data
 const MockDataOne = [

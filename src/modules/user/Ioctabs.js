@@ -106,19 +106,19 @@ const Threatmitlink = () => (
 const panes = [
   { menuItem: <Menu.Item key="ioc">Indicators of<br/>Compromise</Menu.Item>, render: () =>
     <Tab.Pane>
-      <Commonmodal modalSize="small" triggerButton={ Ioclink() } modalHeader="Indicators of Compromise" modalContent={ Tabcontent() }/>
+      <Commonmodal modalSize="small" triggerButton={ Ioclink() } modalHeader="Indicators of Compromise" modalContent={ Tabcontent() } buttonText="Submit"/>
       <Iocimage noborder image={Fileicon} line1="View All" line2="Submissions"/>
     </Tab.Pane>
   },
   { menuItem: <Menu.Item key="ds">Detection<br/>Signatures</Menu.Item>, render: () =>
     <Tab.Pane>
-      <Commonmodal modalSize="small" triggerButton={ Detsiglink() } modalHeader="Detection Signatures" modalContent={ Tabcontent() }/>
+      <Commonmodal modalSize="small" triggerButton={ Detsiglink() } modalHeader="Detection Signatures" modalContent={ Tabcontent() } buttonText="Submit"/>
       <Iocimage noborder image={Fileicon} line1="View All"  line2="Submissions"/>
     </Tab.Pane>
   },
   { menuItem: <Menu.Item key="tm">Threat<br/>Mitigations</Menu.Item>, render: () =>
     <Tab.Pane>
-      <Commonmodal modalSize="small" triggerButton={ Threatmitlink() } modalHeader="Threat Mitigations" modalContent={ Tabcontent() }/>
+      <Commonmodal modalSize="small" triggerButton={ Threatmitlink() } modalHeader="Threat Mitigations" modalContent={ Tabcontent() } buttonText="Submit"/>
       <Iocimage noborder image={Fileicon} line1="View All"  line2="Submissions"/>
     </Tab.Pane>
   }

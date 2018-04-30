@@ -159,7 +159,7 @@ class Leaderboard extends Component {
       <Styledwrap>
         <Leaderheading />
         <LeadersList leadersData={mockData} />
-        <Commonmodal modalSize="small" triggerButton={ Leadermodalbutton() } modalHeader="Leaderboard" modalContent={ Tabcontent() }/>
+        <Commonmodal modalSize="small" triggerButton={ Leadermodalbutton() } modalHeader="Leaderboard" modalContent={ Tabcontent() } buttonText="Close"/>
       </Styledwrap>
     );
   }

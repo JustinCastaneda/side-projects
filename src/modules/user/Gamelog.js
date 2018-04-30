@@ -10,19 +10,19 @@ import Tabcontent from './Tabcontent'
 const Styledwrap = styled.div`
   /* &&& for specificity override */
   &&& {
-    padding: 1rem;
     button {
       margin: .9rem auto;
       font-size: .8rem;
       padding: .75rem 1.25rem;
     }
-    div:last-child {
+    &>div:last-child {
       position: absolute;
       bottom: 0;
       width: 100%;
       height: 4rem;
       background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.9));
       border-top: 1px solid #333;
+      border-radius: 0 0 8px 8px;
     }
   }
 `;
@@ -31,23 +31,36 @@ const Styledlistwrap = styled.ul`
   padding: 0 0 .25rem 0;
   overflow-y: scroll;
   overflow-x: hidden;
+  padding: 1rem;
 `;
 
 const Styledgamelog = styled.li`
   color: #fff;
   display: flex;
-  padding-bottom: .5rem;
-  font-size: 1rem;
+  padding-bottom: .8rem;
+  font-size: .9rem;
   aside {
-    flex: 20%;
+    flex: 10%;
     text-align: left;
   }
   section {
-    flex: 60%;
+    flex: 90%;
   }
   @media (min-width: 1920px) {
     padding-bottom: .5rem;
   }
+`;
+
+const Styledlink = styled.a`
+  display: flex;
+  width: 100%;
+  justify-content: start;
+`;
+
+const Styledmessage = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: start;
 `;
 
 
@@ -79,12 +92,10 @@ function Gameloglist(props) {
   const messages = props.messageData;
   const listItems = messages.map((message) =>
     <Styledgamelog key={message.id}>
-      {/* <aside>{message.type} :</aside> */}
       {message.link ?
-         <a href={message.link}><aside><Icon name="comments"/></aside></a> :
-         <Icon name="shield"/>
+         <Styledlink href={message.link}><aside><Icon name="comments"/></aside><section>{message.text}</section></Styledlink> :
+         <Styledmessage><Icon name="shield"/><section>{message.text}</section></Styledmessage>
       }
-      <section>{message.text}</section>
 
     </Styledgamelog>
   );
@@ -102,7 +113,7 @@ class Gamelog extends Component {
     return (
       <Styledwrap>
         <Gameloglist messageData={mockData} />
-        <Commonmodal modalSize="small" triggerButton={ Gamelogmodalbutton() } modalHeader="Gamelog" modalContent={ Tabcontent() }/>
+        <Commonmodal modalSize="small" triggerButton={ Gamelogmodalbutton() } modalHeader="Gamelog" modalContent={ Tabcontent() } buttonText="Close"/>
       </Styledwrap>
     );
   }

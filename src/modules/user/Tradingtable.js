@@ -16,7 +16,7 @@ const Styledtable = styled(Table)`
       background: transparent;
       font-size: .75rem;
       text-transform: uppercase;
-      color: #2185D0 !important;
+      color: #ccc !important;
     }
     td {
       font-weight: 700;
