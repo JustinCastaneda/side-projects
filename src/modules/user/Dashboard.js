@@ -6,6 +6,7 @@ import Headerlogo from '../common/Headerlogo'
 import Clock from './Clock'
 import Dashlinks from './Dashlinks'
 import Navigationtabs from './Navigationtabs'
+import Roundendoverlay from './Roundendoverlay'
 import Ioctabs from './Ioctabs'
 import Centernav from './Centernav'
 import Leaderboard from './Leaderboard'
@@ -24,6 +25,9 @@ const Styledgrid = styled(Grid)`
   &&&&& {
     max-width: 95rem;
     margin: 0 auto !important;
+    &.blur {
+      filter: blur(4px);
+    }
   }
 `;
 
@@ -38,21 +42,25 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      centerComponent:  {Viewsubmissions}
+      centerComponent:  {Viewsubmissions}, // Needs work
+      roundEnd: false,
+      roundNumber: 1,
+      nextRound: `15 : 00 : 00`
     }
   }
 
   render() {
     return (
       <div className="wrapper ui">
-        <Styledgrid padded>
+        {this.state.roundEnd ? <Roundendoverlay roundNumber={this.state.roundNumber} nextRound={this.state.nextRound}/> : '' }
+        <Styledgrid padded className={this.state.roundEnd ? 'blur' : ''}>
           <Grid.Row className="mainHeader">
             <Headerlogo fontSize="3.2rem" paddingLeft>DEF3NSE</Headerlogo>
             <Clock />
             <Dashlinks />
           </Grid.Row>
         </Styledgrid>
-        <Styledgrid padded className="game">
+        <Styledgrid padded className={`game ${this.state.roundEnd ? `blur` : ''}`}>
           <Grid.Row style={styles.gridRow}>
             <Grid.Column width={4} className="main">
               <div className="top-left-nav region">

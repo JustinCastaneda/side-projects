@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Form, Checkbox, Icon, Field, Input } from 'semantic-ui-react'
+import { Table, Form, Checkbox, Input } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 import Styledbutton from '../styledcomponents/Styledbutton'

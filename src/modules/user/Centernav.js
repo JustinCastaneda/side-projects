@@ -74,8 +74,9 @@ To Do:
 Needs to render a different component in Tab.Pane, depending on what has been clicked
 Not sure how to pass that state/prop in
 */
+
 const panes = [
-  { menuItem: <Menu.Item key="ioc">Artifact Information</Menu.Item>, render: (props) =>
+  { menuItem: <Menu.Item key="ioc">Artifact Information</Menu.Item>, render: () =>
     <Tab.Pane>
       <Artifactinfo title={MockData[0].title} text={MockData[0].text} config={MockData[0].config} info={MockData[0].info} />
       <Scenarioquestion title={MockQuestion[0].title} question={MockQuestion[0].question} />
@@ -95,9 +96,8 @@ const Centernavtabs = () => (
 
 class Centernav extends Component {
   render() {
-    console.log(this.props.centerComponent);
     return (
-      <Centernavtabs showComponent={this.props.centerComponent}/>
+      <Centernavtabs centerComponent={this.props.centerComponent}/>
     );
   }
 }
