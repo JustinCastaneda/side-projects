@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import Commonmodal from '../common/Commonmodal'
 import Tabcontent from './Tabcontent'
+import Iocform from './Iocform'
 
 import Iocicon from '../../resources/images/ioc_icon.png'
 import Wallicon from '../../resources/images/wall_icon.png'
@@ -102,11 +103,19 @@ const Threatmitlink = () => (
   <Iocimage image={Tmicon} line1="Threat" line2="Mitigations"/>
 )
 
+/*
+To Do:
+- Text Editor for Detection Signatures
+- Hook up Indicators of Compromise form in <Iocform />
+- Not sure what Threat Mitigations needs
+- View Submissions needs to render in the <Centernav />'s first tab when clicked.
+*/
+
 // TAB CONTENT - Panes
 const panes = [
   { menuItem: <Menu.Item key="ioc">Indicators of<br/>Compromise</Menu.Item>, render: () =>
     <Tab.Pane>
-      <Commonmodal modalSize="small" triggerButton={ Ioclink() } modalHeader="Indicators of Compromise" modalContent={ Tabcontent() } buttonText="Submit"/>
+      <Commonmodal modalSize="small" triggerButton={ Ioclink() } modalHeader="Indicators of Compromise" modalContent={<Iocform/>} buttonText="Submit"/>
       <Iocimage noborder image={Fileicon} line1="View All" line2="Submissions"/>
     </Tab.Pane>
   },

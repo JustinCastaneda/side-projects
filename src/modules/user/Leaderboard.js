@@ -103,26 +103,26 @@ const mockData = [
   },
   {
     rank: 7,
-    id: 'jane',
-    name: 'Jane MacLaughlin',
+    id: 'Diana',
+    name: 'Diana MacLaughlin',
     score: 26
   },
   {
     rank: 8,
-    id: 'anna',
-    name: 'Anna Fleming',
+    id: 'billy',
+    name: 'Billy Fleming',
     score: 20
   },
   {
     rank: 9,
-    id: 'jane',
-    name: 'Jane MacLaughlin',
+    id: 'robert',
+    name: 'Robert MacLaughlin',
     score: 26
   },
   {
     rank: 10,
-    id: 'anna',
-    name: 'Anna Fleming',
+    id: 'donald',
+    name: 'Donald Trump',
     score: 20
   }
 ]
@@ -152,6 +152,11 @@ function LeadersList(props) {
 const Leadermodalbutton = () => (
   <Styledbutton>View All</Styledbutton>
 );
+
+/*
+To Do:
+- API calls for leaderboard data to replace mockData
+*/
 
 class Leaderboard extends Component {
   render() {

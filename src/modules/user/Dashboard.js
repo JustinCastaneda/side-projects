@@ -10,6 +10,7 @@ import Ioctabs from './Ioctabs'
 import Centernav from './Centernav'
 import Leaderboard from './Leaderboard'
 import Gamelog from './Gamelog'
+import Viewsubmissions from './Viewsubmissions'
 
 const styles = {
   gridRow: {
@@ -26,7 +27,21 @@ const Styledgrid = styled(Grid)`
   }
 `;
 
+
+// To do:
+/* Make Cenvernav render a different component depending on what has been clicked
+ - <Viewsubmissions />
+ - </Artifactinfo />
+ - Etc.
+*/
 class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      centerComponent:  {Viewsubmissions}
+    }
+  }
+
   render() {
     return (
       <div className="wrapper ui">
@@ -56,7 +71,7 @@ class Dashboard extends Component {
               <div className="center-content region">
                 <div className="inner-col-wrap">
                   <h2>Intelligence</h2>
-                  <Centernav />
+                  <Centernav centerComponent={this.state.centerComponent}/>
                 </div>
               </div>
             </Grid.Column>

@@ -9,7 +9,7 @@ const Mainbutton = styled(Button)`
     display: flex;
     flex: 1 1 auto;
     border-radius: 5px;
-    padding: ${props => props.longbutton ? '.9rem 2.4rem' : '1rem'};
+    padding: ${props => props.longbutton ? '.75rem 2.2rem' : '1rem'};
     margin: 0;
     text-align: center;
     justify-content: center;
@@ -21,6 +21,11 @@ const Mainbutton = styled(Button)`
 }
 `;
 
+
+/*
+To Do:
+- Figure out how to add submission props to this button.
+*/
 class Styledbutton extends Component {
   render() {
     return (

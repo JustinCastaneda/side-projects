@@ -104,6 +104,14 @@ const rootPanels = MockDataOne.map(item => ({
   }
 }));
 
+
+/*
+To Do:
+- Replace data for Artifacts. This data should be passed as a prop in <Navigationtabs /> so we can re-use this accordion component.
+- Replace content with links to artifact data. This data will need to be passed into an instance of <Artifactinfo /> and passed into <Centernav /> when these links are clicked.
+*/
+
+
 class Navaccordion extends Component {
   state = { activeIndex: 0 }
 

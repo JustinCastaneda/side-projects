@@ -28,7 +28,11 @@ const Topinfo = ({ title, text, config, info}) => (
     <a href={info}>More Info</a>
   </Styledinfowrap>
 )
-
+/*
+To Do:
+- Connect links to config files and more info
+- This component should take a prop from <Navaccordion /> depending on the round and what Artifacts exist. Artifact data will come from there.
+ */
 class Artifactinfo extends Component {
   render(MockData) {
     return (

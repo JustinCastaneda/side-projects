@@ -2,16 +2,20 @@ import React, { Component } from 'react'
 import { Table, Accordion, Icon } from 'semantic-ui-react'
 import styled from 'styled-components'
 
+import Factionstable from './Factionstable'
+
 // Styled components
 const Styledtable = styled(Table)`
   &&& {
-    padding: 1rem;
     background: transparent;
     text-align: center;
     margin: 0;
-    padding: 0;
-    border-bottom: 1px solid #333;
+    padding: .5rem 0 0 0;
+    border-top: 1px solid #333;
     border-radius: 0;
+    &:first-child {
+      border: none;
+    }
     thead th {
       background: transparent;
       font-size: .75rem;
@@ -30,13 +34,22 @@ const Styledaccordion = styled(Accordion)`
     i.dropdown.icon {
       display: none;
     }
+    .title, .content {
+      padding: 0 !important;
+    }
     .title.active {
+      background-color: rgba(37,37,37,.75);
       .ui.table {
-        border-bottom-color: #2185D0;
+        border-top: 2px solid #2185D0;
       }
       td:first-child {
         text-shadow: 0 0 10px #2185D0;
       }
+    }
+    .content.active {
+
+        border-bottom: 2px solid #2185D0;
+
     }
   }
 `;
@@ -157,18 +170,22 @@ const TacticTabTitle = ({ id, name, trading, probability, trend, mytrade }) => (
   </Styledtable>
 );
 
-const stoof = MockData.map(tactic => ({
+const rootPanels = MockData.map(tactic => ({
   title: {
     content: <TacticTabTitle name={tactic.name} trading={tactic.trading} probability={tactic.probability} trend={tactic.trend} mytrade={tactic.mytrade} />,
     key: `tactic-tab-${tactic.id}`
    },
    content: {
-     content: `This is content for tactic ${tactic.id}`,
+     content: <Factionstable />,
      key: `tactic-tab-${tactic.id}`
    }
 }));
 
-
+/*
+To Do:
+- Need to connect all of this up to the data and add any regions I missed in TacticTabTitle and the MockData.
+- Tactics will come from the Artifacts in each round, so I'm not sure how we'll deal with the data for that. I'm thinking each Artifact will come with the tactic data, or make a call to pull in certain tactic information into TacticTabTitle.
+*/
 class Tradingtable extends Component {
   state = { activeIndex: 0 }
 
@@ -196,7 +213,7 @@ class Tradingtable extends Component {
             </Table.Row>
           </Table.Header>
         </Styledtable>
-        <Styledaccordion fluid inverted activeIndex={activeIndex} panels={stoof} onTitleClick={this.handleTitleClick}/>
+        <Styledaccordion fluid inverted activeIndex={activeIndex} panels={rootPanels} onTitleClick={this.handleTitleClick}/>
       </div>
     );
   }

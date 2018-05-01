@@ -108,6 +108,12 @@ const Gamelogmodalbutton = () => (
   <Styledbutton>View All</Styledbutton>
 );
 
+/*
+To Do:
+- Build code to replace Mock Data
+- Build Game log modal info
+ */
+
 class Gamelog extends Component {
   render() {
     return (

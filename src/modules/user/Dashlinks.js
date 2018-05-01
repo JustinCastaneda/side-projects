@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { Grid } from 'semantic-ui-react';
 
+
+
+/*
+To Do:
+- Create pages for Lifeline & Profile
+- Add Routing links
+*/
 class Dashlinks extends Component {
   render() {
     return (

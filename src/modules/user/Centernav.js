@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Tab, Menu } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 import Artifactinfo from './Artifactinfo'
 import Scenarioquestion from './Scenarioquestion'
 import Tradingtable from './Tradingtable'
+import Viewsubmissions from './Viewsubmissions'
 
 const Styledtab = styled(Tab)`
   /* &&& for specificity override */
@@ -68,8 +69,13 @@ const MockQuestion = [
 
 
 // TAB CONTENT - Panes
+/*
+To Do:
+Needs to render a different component in Tab.Pane, depending on what has been clicked
+Not sure how to pass that state/prop in
+*/
 const panes = [
-  { menuItem: <Menu.Item key="ioc">Artifact Information</Menu.Item>, render: () =>
+  { menuItem: <Menu.Item key="ioc">Artifact Information</Menu.Item>, render: (props) =>
     <Tab.Pane>
       <Artifactinfo title={MockData[0].title} text={MockData[0].text} config={MockData[0].config} info={MockData[0].info} />
       <Scenarioquestion title={MockQuestion[0].title} question={MockQuestion[0].question} />
@@ -83,8 +89,17 @@ const panes = [
 ]
 
 // TAB CONTENT - Tab Parent
-const Centernav = () => (
-  <Styledtab menu={{ text: true }} panes={panes} />
+const Centernavtabs = () => (
+  <Styledtab menu={{ text: true }} panes={panes}/>
 )
+
+class Centernav extends Component {
+  render() {
+    console.log(this.props.centerComponent);
+    return (
+      <Centernavtabs showComponent={this.props.centerComponent}/>
+    );
+  }
+}
 
 export default Centernav;

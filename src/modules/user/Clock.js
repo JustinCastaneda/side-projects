@@ -150,7 +150,10 @@ const Scoreregion = () => (
   </Styledscore>
 )
 
-
+/*
+To Do:
+Add Clock functionality to <Clockregion />. Sync up with each round.
+*/
 class Clock extends Component {
   render() {
     return (

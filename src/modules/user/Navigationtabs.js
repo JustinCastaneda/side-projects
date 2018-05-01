@@ -67,6 +67,11 @@ const Styledtab = styled(Tab)`
   }
 `;
 
+/*
+To Do:
+- We need to feed data into each <Navaccordion /> Component so it creates a different accordion with different options. Right now the data is in that component, but it really should be passed as a prop.
+*/
+
 // TAB CONTENT - Panes
 const panes = [
   { menuItem: <Menu.Item key="scenarios">Scenarios</Menu.Item>, render: () =>
@@ -76,12 +81,12 @@ const panes = [
   },
   { menuItem: <Menu.Item key="ttps">TTPs</Menu.Item>, render: () =>
     <Tab.Pane>
-      <div>Tab 2 Content</div>
+      <Navaccordion />
     </Tab.Pane>
   },
   { menuItem: <Menu.Item key="detect">Detect</Menu.Item>, render: () =>
     <Tab.Pane>
-      <div>Tab 3 Content</div>
+      <Navaccordion />
     </Tab.Pane>
   },
   { menuItem: <Menu.Item key="protect">Protect</Menu.Item>, render: () =>

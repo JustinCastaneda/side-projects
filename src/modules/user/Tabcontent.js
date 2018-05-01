@@ -1,5 +1,7 @@
 import React from 'react'
 
+// Throwaway data
+
 const Tabcontent = () => (
   <div>
     Lorem ipsum dolor sit amet, porro audiam expetendis qui ut. Vel mutat blandit democritum an, te facilis eloquentiam sit, qui eius munere ex. Ad integre definitionem vis. Cu vix fuisset insolens gubergren. Sea omnium sententiae complectitur ea, mea animal sanctus no. Cu esse ullum sententiae vim. Eu mel falli bonorum voluptatibus.
