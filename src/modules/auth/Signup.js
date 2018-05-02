@@ -140,7 +140,7 @@ function Login({ signUp }) {
 const mapDispatchToProps = (dispatch) => ({
   signUp: ({ target: {email, password, username, firstName, lastName} }) => {
     return FourSight.createUser(
-       +(new Date()) - Math.floor(Math.random()*10000000000),
+      '_',
        password.value,
        email.value,
        lastName.value,
