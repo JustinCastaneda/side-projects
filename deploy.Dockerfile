@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:9-alpine
 
 # Install Git
 RUN apk update && apk upgrade && \
