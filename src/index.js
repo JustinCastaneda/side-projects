@@ -2,13 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './resources/style.css';
-import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
-import { store, history } from './redux/store';
+import { compose, createStore, applyMiddleware } from 'redux';
+import { createLogger } from 'redux-logger';
+import rootReducer from './redux/reducers';
+import createHistory from 'history/createBrowserHistory'
+import {routerMiddleware} from "react-router-redux";
+
+const history = createHistory({basename: '/app'})
+const middleware = [
+  createLogger(),
+  routerMiddleware(history)
+];
+
+const enhancers = compose(
+  applyMiddleware(...middleware),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+);
+
+const store = createStore(
+  rootReducer,
+  {},
+  enhancers
+);
 
 ReactDOM.render(
   <Provider store={store}>
     <App history={history}/>
   </Provider>,
   document.getElementById('root'));
-registerServiceWorker();
