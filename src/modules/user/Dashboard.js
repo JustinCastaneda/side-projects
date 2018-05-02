@@ -6,7 +6,9 @@ import Headerlogo from '../common/Headerlogo'
 import Clock from './Clock'
 import Dashlinks from './Dashlinks'
 import Navigationtabs from './Navigationtabs'
-import Roundendoverlay from './Roundendoverlay'
+import Roundendemailoverlay from './Roundendemailoverlay'
+import Roundendoverlay from './Roundendemailoverlay'
+import Gameoveroverlay from './Gameoveroverlay'
 import Ioctabs from './Ioctabs'
 import Centernav from './Centernav'
 import Leaderboard from './Leaderboard'
@@ -45,7 +47,9 @@ class Dashboard extends Component {
       centerComponent:  {Viewsubmissions}, // Needs work
       roundEnd: false,
       roundNumber: 1,
-      nextRound: `15 : 00 : 00`
+      nextRound: `15 : 00 : 00`,
+      gameEnd: true,
+      nextGame: `12 : 20 : 05`
     }
   }
 
@@ -53,14 +57,16 @@ class Dashboard extends Component {
     return (
       <div className="wrapper ui">
         {this.state.roundEnd ? <Roundendoverlay roundNumber={this.state.roundNumber} nextRound={this.state.nextRound}/> : '' }
-        <Styledgrid padded className={this.state.roundEnd ? 'blur' : ''}>
+        {/* {this.state.roundEnd ? <Roundendemailoverlay roundNumber={this.state.roundNumber} nextRound={this.state.nextRound}/> : '' } */}
+        {this.state.gameEnd ? <Gameoveroverlay nextGame={this.state.nextGame}/> : '' }
+        <Styledgrid padded className={this.state.roundEnd || this.state.gameEnd ? 'blur' : ''}>
           <Grid.Row className="mainHeader">
             <Headerlogo fontSize="3.2rem" paddingLeft>DEF3NSE</Headerlogo>
             <Clock />
             <Dashlinks />
           </Grid.Row>
         </Styledgrid>
-        <Styledgrid padded className={`game ${this.state.roundEnd ? `blur` : ''}`}>
+        <Styledgrid padded className={`game ${this.state.roundEnd || this.state.gameEnd ? `blur` : ''}`}>
           <Grid.Row style={styles.gridRow}>
             <Grid.Column width={4} className="main">
               <div className="top-left-nav region">

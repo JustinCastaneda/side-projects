@@ -57,7 +57,7 @@ const Styledsection = styled.section`
   }
 `;
 
-class Roundendoverlay extends Component {
+class Roundendemailoverlay extends Component {
   render() {
     return (
       <Styledoverlay>
@@ -66,9 +66,9 @@ class Roundendoverlay extends Component {
             <h1>Round {this.props.roundNumber} Complete!</h1>
             <p>An duo eros percipit, usu ad civibus sapientem. Menandri maiestatis mei te. Ex cum feugiat civibus, vim eius liberavisse id. Sea homero nusquam eloquentiam ne, ne sea dicit eruditi vituperata. Eu ius debitis nominati, putent regione sea ne, eos augue tritani in. Pro cu ullum dissentias, te solum nullam impetus quo, verear insolens inciderint et duo.</p>
             <h3>Next Round Begins in</h3>
-            <h1>{this.props.nextRound}</h1>
+            <h3>Watch Your Email for Updates</h3>
             <aside>
-              <NavLink to="/login"><Styledbutton longButton="true">Login</Styledbutton></NavLink>
+              <NavLink to="/leaderboard"><Styledbutton longButton="true">Leaderboard</Styledbutton></NavLink>
               <a href="https://workshop.def3nse.net/"><Styledbutton longButton="true">Workshop</Styledbutton></a>
             </aside>
           </Styledsection>
@@ -78,4 +78,4 @@ class Roundendoverlay extends Component {
   }
 }
 
-export default Roundendoverlay;
+export default Roundendemailoverlay;
