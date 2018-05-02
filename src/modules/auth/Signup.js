@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import { push } from 'react-router-redux'
 import { Grid, Button, Form } from 'semantic-ui-react'
 import styled from 'styled-components'
 import Headerlogo from '../common/Headerlogo'
 import Styledbutton from '../styledcomponents/Styledbutton'
+import { FourSight } from '../../utils/bundle'
+import {connect} from "react-redux";
 
 
 // Styled Components
@@ -87,8 +90,7 @@ const Stylednavlink = styled(NavLink)`
 
 // Component
 
-class Login extends Component {
-  render() {
+function Login({ signUp }) {
     return (
       <div className="wrapper fixed">
         <Grid padded>
@@ -101,25 +103,28 @@ class Login extends Component {
                 <Styledsubhead>Log in to Begin</Styledsubhead>
                 <Styledgrid>
                   <Grid.Row>
-                    <Styledform size="large" onSubmit={this.props.Signup}>
+                    <Styledform size="large" onSubmit={signUp}>
+                      <Form.Field>
+                        <Form.Input type="hidden" name="username" value="_"></Form.Input>
+                      </Form.Field>
                       <Form.Field>
                         <Form.Input type="email" name="email" required placeholder="Enter an email address..."></Form.Input>
                       </Form.Field>
                       <Form.Field>
-                        <Form.Input required minLength="6" type="password" placeholder="Enter a password..."></Form.Input>
+                        <Form.Input required minLength="6" name="password" type="password" placeholder="Enter a password..."></Form.Input>
                       </Form.Field>
                       <Form.Field>
                         <Form.Input required minLength="6" type="password" placeholder="Confirm password..."></Form.Input>
                       </Form.Field>
                       <Form.Field>
-                        <Form.Input required placeholder="Enter first name..."></Form.Input>
+                        <Form.Input name="firstName" required placeholder="Enter first name..."></Form.Input>
                       </Form.Field>
                       <Form.Field>
-                        <Form.Input required placeholder="Enter last name..."></Form.Input>
+                        <Form.Input name="lastName" required placeholder="Enter last name..."></Form.Input>
                       </Form.Field>
                       <Button.Group>
                         <Stylednavlink to="/"><Styledbutton cancelButton="true">Cancel</Styledbutton></Stylednavlink>
-                        <Stylednavlink to="/crossroad" lastbutton="true"><Styledbutton>Submit</Styledbutton></Stylednavlink>
+                        <Styledbutton>Submit</Styledbutton>
                       </Button.Group>
                     </Styledform>
                   </Grid.Row>
@@ -130,7 +135,21 @@ class Login extends Component {
         </Grid>
       </div>
     );
-  }
 }
 
-export default Login;
+const mapDispatchToProps = (dispatch) => ({
+  signUp: ({ target: {email, password, username, firstName, lastName} }) => {
+    return FourSight.createUser(
+       +(new Date()) - Math.floor(Math.random()*10000000000),
+       password.value,
+       email.value,
+       lastName.value,
+       firstName.value
+    ).then(res => {
+      console.info(res)
+      dispatch(push('/dashboard'))
+    })
+  }
+});
+
+export default connect(undefined, mapDispatchToProps)(Login);

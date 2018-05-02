@@ -1,25 +1,22 @@
-import React, { PureComponent } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux'
 
 
 // Components Area
-import { Home, Dashboard, Login, Signup, Crossroad } from './modules';
+import { Home, Dashboard, Login, Signup } from './modules';
 
-class App extends PureComponent {
-  render() {
-    return (
-      <BrowserRouter history={this.props.history}>
+export default function App({ history }) {
+  console.log("=============>", history);
+  return (
+    <ConnectedRouter history={history}>
         <Switch>
           <Route exact={true} path="/" component={Home} />
           <Route exact={true} path="/login" component={Login} />
           <Route exact={true} path="/signup" component={Signup} />
-          <Route exact={true} path="/crossroad" component={Crossroad} />
           <Route exact={true} path="/dashboard" component={Dashboard} />
           <Route component={Home}/>
         </Switch>
-      </BrowserRouter>
-    );
-  }
+    </ConnectedRouter>
+  );
 }
-
-export default App;
