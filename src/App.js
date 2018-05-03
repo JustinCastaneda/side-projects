@@ -4,7 +4,7 @@ import { ConnectedRouter } from 'react-router-redux'
 
 
 // Components Area
-import { Home, Dashboard, Login, Signup } from './modules';
+import { Home, SplashPage, Login, Signup } from './modules';
 
 export default function App({ history }) {
   console.log("=============>", history);
@@ -14,7 +14,7 @@ export default function App({ history }) {
           <Route exact={true} path="/" component={Home} />
           <Route exact={true} path="/login" component={Login} />
           <Route exact={true} path="/signup" component={Signup} />
-          <Route exact={true} path="/dashboard" component={Dashboard} />
+          <Route exact={true} path="/dashboard" component={SplashPage} />
           <Route component={Home}/>
         </Switch>
     </ConnectedRouter>

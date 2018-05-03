@@ -29,7 +29,7 @@ To Do:
 class Styledbutton extends Component {
   render() {
     return (
-      <Mainbutton longbutton={this.props.longButton} cancelbutton={this.props.cancelButton}>{this.props.children}</Mainbutton>
+      <Mainbutton loading={this.props.loading} longbutton={this.props.longButton} cancelbutton={this.props.cancelButton}>{this.props.children}</Mainbutton>
     );
   }
 }

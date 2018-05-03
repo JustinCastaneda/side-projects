@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { push } from 'react-router-redux'
-import { Grid, Button, Form } from 'semantic-ui-react'
+import {Grid, Button, Form, Message} from 'semantic-ui-react'
 import styled from 'styled-components'
 import Headerlogo from '../common/Headerlogo'
 import Styledbutton from '../styledcomponents/Styledbutton'
-import { FourSight } from '../../utils/bundle'
 import {connect} from "react-redux";
-
+import ActionTypes from "../../redux/actionTypes";
+import {signUpUser} from "../../redux/actionCreators/auth";
 
 // Styled Components
 
@@ -90,7 +89,9 @@ const Stylednavlink = styled(NavLink)`
 
 // Component
 
-function Login({ signUp }) {
+function Login(props) {
+  const { signUp } = props;
+  const loginState = props.loginState.toJS();
     return (
       <div className="wrapper fixed">
         <Grid padded>
@@ -103,7 +104,17 @@ function Login({ signUp }) {
                 <Styledsubhead>Log in to Begin</Styledsubhead>
                 <Styledgrid>
                   <Grid.Row>
-                    <Styledform size="large" onSubmit={signUp}>
+                    <Styledform size="large" onSubmit={signUp} error={!!loginState.error} success={!!loginState.success}>
+                      <Message
+                        error
+                        header='Sign Up Failed'
+                        content={loginState.error}
+                      />
+                      <Message
+                        success
+                        header='Sign Up Success'
+                        content={loginState.success}
+                      />
                       <Form.Field>
                         <Form.Input type="hidden" name="username" value="_"></Form.Input>
                       </Form.Field>
@@ -111,10 +122,10 @@ function Login({ signUp }) {
                         <Form.Input type="email" name="email" required placeholder="Enter an email address..."></Form.Input>
                       </Form.Field>
                       <Form.Field>
-                        <Form.Input required minLength="6" name="password" type="password" placeholder="Enter a password..."></Form.Input>
+                        <Form.Input required minLength="8"  name="password" type="password" placeholder="Enter a password..."></Form.Input>
                       </Form.Field>
                       <Form.Field>
-                        <Form.Input required minLength="6" type="password" placeholder="Confirm password..."></Form.Input>
+                        <Form.Input required minLength="8" type="password" name='confirmPassword' placeholder="Confirm password..."></Form.Input>
                       </Form.Field>
                       <Form.Field>
                         <Form.Input name="firstName" required placeholder="Enter first name..."></Form.Input>
@@ -124,7 +135,7 @@ function Login({ signUp }) {
                       </Form.Field>
                       <Button.Group>
                         <Stylednavlink to="/"><Styledbutton cancelButton="true">Cancel</Styledbutton></Stylednavlink>
-                        <Styledbutton>Submit</Styledbutton>
+                        <Styledbutton loading={loginState.isPending}>Submit</Styledbutton>
                       </Button.Group>
                     </Styledform>
                   </Grid.Row>
@@ -138,18 +149,24 @@ function Login({ signUp }) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  signUp: ({ target: {email, password, username, firstName, lastName} }) => {
-    return FourSight.createUser(
-      '_',
-       password.value,
-       email.value,
-       lastName.value,
-       firstName.value
-    ).then(res => {
-      console.info(res)
-      dispatch(push('/dashboard'))
-    })
+  signUp: ({ target: {email, password, confirmPassword, firstName, lastName} }) => {
+    if (password.value !== confirmPassword.value) {
+      dispatch({
+        type: ActionTypes.SIGNUP_FAIL,
+        message: 'Passwords do not match'
+      });
+      return
+    }
+    dispatch(signUpUser({
+      email: email.value,
+      password: password.value,
+      confirmPassword: confirmPassword.value,
+      firstName: firstName.value,
+      lastName: lastName.value
+    }))
   }
 });
 
-export default connect(undefined, mapDispatchToProps)(Login);
+export default connect(state => ({
+  loginState: state.loginState
+}), mapDispatchToProps)(Login);
