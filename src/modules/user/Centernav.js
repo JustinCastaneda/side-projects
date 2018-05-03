@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import Artifactinfo from './Artifactinfo'
 import Scenarioquestion from './Scenarioquestion'
 import Tradingtable from './Tradingtable'
-import Viewsubmissions from './Viewsubmissions'
 
 const Styledtab = styled(Tab)`
   /* &&& for specificity override */

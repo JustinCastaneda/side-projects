@@ -5,6 +5,7 @@ import './resources/style.css';
 import { Provider } from 'react-redux';
 import { compose, createStore, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
+import thunk from 'redux-thunk';
 import rootReducer from './redux/reducers';
 import createHistory from 'history/createBrowserHistory'
 import {routerMiddleware} from "react-router-redux";
@@ -13,7 +14,8 @@ import { FourSight } from './utils/bundle'
 const history = createHistory({basename: '/app'})
 const middleware = [
   createLogger(),
-  routerMiddleware(history)
+  routerMiddleware(history),
+  thunk
 ];
 
 const enhancers = compose(
