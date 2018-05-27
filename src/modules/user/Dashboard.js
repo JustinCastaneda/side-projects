@@ -8,6 +8,7 @@ import Dashlinks from './Dashlinks'
 import Navigationtabs from './Navigationtabs'
 import Roundendoverlay from './Roundendemailoverlay'
 import Gameoveroverlay from './Gameoveroverlay'
+import Roundpreviewoverlay from './Roundendoverlay'
 import Ioctabs from './Ioctabs'
 import Centernav from './Centernav'
 import Leaderboard from './Leaderboard'
@@ -47,8 +48,9 @@ class Dashboard extends Component {
       roundEnd: false,
       roundNumber: 1,
       nextRound: `15 : 00 : 00`,
-      gameEnd: true,
-      nextGame: `12 : 20 : 05`
+      gameEnd: false,
+      nextGame: `12 : 20 : 05`,
+      roundPreview: true
     }
   }
 
@@ -58,6 +60,7 @@ class Dashboard extends Component {
         {this.state.roundEnd ? <Roundendoverlay roundNumber={this.state.roundNumber} nextRound={this.state.nextRound}/> : '' }
         {/* {this.state.roundEnd ? <Roundendemailoverlay roundNumber={this.state.roundNumber} nextRound={this.state.nextRound}/> : '' } */}
         {this.state.gameEnd ? <Gameoveroverlay nextGame={this.state.nextGame}/> : '' }
+        {this.state.roundPreview ? <Roundpreviewoverlay /> : ''}
         <Styledgrid padded className={this.state.roundEnd || this.state.gameEnd ? 'blur' : ''}>
           <Grid.Row className="mainHeader">
             <Headerlogo fontSize="3.2rem" paddingLeft>DEF3NSE</Headerlogo>
